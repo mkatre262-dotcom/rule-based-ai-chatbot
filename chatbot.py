@@ -1,5 +1,7 @@
 
 import datetime
+from zoneinfo import ZoneInfo
+
 import random
 import requests
 import calendar
@@ -31,11 +33,13 @@ def get_bot_response(user_message):
 
     # Date
     if user_message == "date":
-        return "Current Date: " + datetime.datetime.now().strftime("%d-%m-%Y")
+        ist = ZoneInfo("Asia/Kolkata")
+        return "Current Date: " + datetime.datetime.now(ist).strftime("%d-%m-%Y")
 
     # Time
     elif user_message == "time":
-        return "Current Time: " + datetime.datetime.now().strftime("%H:%M:%S")
+         ist = ZoneInfo("Asia/Kolkata")
+        return "Current Time: " + datetime.datetime.now(ist).strftime("%H:%M:%S")
 
     # Joke
     elif user_message == "joke":
