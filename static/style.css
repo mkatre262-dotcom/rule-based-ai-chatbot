@@ -9,7 +9,7 @@
 }
 
 body{
-    background:linear-gradient(135deg,#0f4c81,#1e88e5,#42a5f5);
+    background:linear-gradient(135deg,#0f4c81,#a7b5c1,#42a5f5);
     height:100vh;
     display:flex;
     justify-content:center;
@@ -421,44 +421,6 @@ font-size:14px;
 
 }
 
-/* }
-.stopwatch{
-    background:#ffffff;
-    margin:15px;
-    padding:15px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
-
-#display{
-    font-size:34px;
-    font-weight:bold;
-    color:#1976d2;
-    margin:15px 0;
-}
-
-.stopwatch-buttons button{
-    padding:10px 20px;
-    margin:5px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    color:white;
-    font-size:15px;
-}
-
-.stopwatch-buttons button:nth-child(1){
-    background:#4CAF50;
-}
-
-.stopwatch-buttons button:nth-child(2){
-    background:#f44336;
-}
-
-.stopwatch-buttons button:nth-child(3){
-    background:#1976d2;
-} */
 .header-top{
 display:flex;
 justify-content:space-between;
@@ -508,4 +470,42 @@ border-radius:10px;
 cursor:pointer;
 }
 
+}
+/* Normal Desktop Style */
+.chat-input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+}
+
+/* 1. Input field ko flexible banayein taaki wo jagah ke hisab se shrink ho sake */
+.chat-input-container input {
+  flex: 1; 
+  min-width: 0; /* Mobile par width crash hone se rokega */
+  padding: 8px 12px;
+}
+
+/* 2. Icons ka size aur spacing mobile par thoda chhota karein */
+.chat-input-container button, 
+.chat-input-container .icon {
+  flex-shrink: 0; /* Buttons ko squeeze hone se rokega */
+  width: 35px;    /* Mobile ke liye icon size chhota kiya */
+  height: 35px;
+}
+
+/* 3. Mobile Screens ke liye Media Query */
+@media (max-width: 600px) {
+  .chat-input-container {
+    gap: 4px; /* Mobile par icons ke beech ka gap kam karein */
+    padding: 5px;
+  }
+  
+  .chat-input-container button, 
+  .chat-input-container .icon {
+    width: 32px;  /* Mobile me thode chhote icons fit ho jayenge */
+    height: 32px;
+    font-size: 14px;
+  }
 }
