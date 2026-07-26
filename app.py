@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import chatbot
+import os
 
 app = Flask(__name__)
 
@@ -17,4 +18,7 @@ def chat():
     return jsonify({"reply": bot_reply})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Render khud PORT environment variable set karta hai
+    port = int(os.environ.get("PORT", 5000))
+    # host='0.0.0.0' hona sabse zaroori hai
+    app.run(host="0.0.0.0", port=port,debug=True)
