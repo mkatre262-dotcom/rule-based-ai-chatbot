@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rule Based AI Chat Assistant</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="chat-container">
+
+<!-- Header -->
+
+<div class="chat-header">
+
+    <div class="header-top">
+
+        <h1>🤖 Rule Based AI Chat Assistant</h1>
+
+        <button id="stopwatch-btn" onclick="toggleStopwatch()">⏱</button>
+
+    </div>
+
+    <p class="online">🟢 Online</p>
+
+</div>
+
+<!-- Chat Area -->
+
+<div id="chat-box" class="chat-box">
+
+<div class="message bot">
+
+<div class="avatar">🤖</div>
+
+<div class="text">
+
+<h3>Hello 👋</h3>
+
+<p>
+
+Welcome to Rule Based AI Chat Assistant.
+
+</p>
+
+<p>
+
+You can ask me about:
+
+</p>
+
+<ul>
+
+<li>📅 Date</li>
+
+<li>🕒 Time</li>
+
+<li>🌤 Weather</li>
+
+<li>😂 Joke</li>
+
+<li>🧮 Calculator</li>
+
+<li>🎂 Age Calculator</li>
+
+<li>💪 Motivation</li>
+
+<li>🐍 Python</li>
+
+<li>🤖 AI</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Quick Buttons -->
+
+<div class="quick-buttons">
+
+<button onclick="quickMessage('date')">📅 Date</button>
+
+<button onclick="quickMessage('time')">🕒 Time</button>
+
+<button onclick="quickMessage('weather')">🌤 Weather</button>
+
+<button onclick="quickMessage('joke')">😂 Joke</button>
+
+</div>
+
+
+
+
+<!-- Input -->
+
+<div class="input-area">
+
+<input
+
+type="text"
+
+id="user-input"
+
+placeholder="Type your message...">
+
+<button class="mic-btn" onclick="startVoice()">
+
+🎤
+
+</button>
+
+<button class="theme-btn" onclick="toggleTheme()">
+
+🌙
+
+</button>
+
+<button class="clear-btn" onclick="clearChat()">
+
+🗑
+
+</button>
+
+<button class="send-btn" onclick="sendMessage()">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+</button>
+
+</div>
+
+<!-- Footer -->
+
+<div class="footer">
+
+Developed by <b>Rupali Katre</b><br>
+
+
+</div>
+</div>
+<!-- stopwatch popup -->
+<div id="stopwatch-popup">
+
+    <div class="stopwatch-card">
+
+        <h2>⏱ Stopwatch</h2>
+
+        <div id="display">00:00:00</div>
+
+        <br>
+
+        <button onclick="startStopwatch()">Start</button>
+
+        <button onclick="stopStopwatch()">Stop</button>
+
+        <button onclick="resetStopwatch()">Reset</button>
+
+        <br><br>
+
+        <button class="close-btn" onclick="toggleStopwatch()">✖ Close</button>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
